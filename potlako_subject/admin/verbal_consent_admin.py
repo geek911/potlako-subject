@@ -2,10 +2,10 @@ from django.contrib import admin
 from edc_model_admin.model_admin_audit_fields_mixin import (
     audit_fields, audit_fieldset_tuple)
 
-from .admin_filter_mixins import FacilityListFilter
 from ..admin_site import potlako_subject_admin
 from ..forms import VerbalConsentForm
 from ..models import VerbalConsent
+from .admin_filter_mixins import FacilityListFilter
 from .modeladmin_mixins import ModelAdminMixin
 
 
@@ -28,7 +28,7 @@ class VerbalConsentAdmin(ModelAdminMixin, admin.ModelAdmin):
             )}),
         audit_fieldset_tuple)
 
-    search_fields = ('subject_identifier',)
+    search_fields = ('subject_identifier', 'screening_identifier')
 
     list_display = ('subject_identifier', 'screening_identifier',
                     'language', 'is_eligible')

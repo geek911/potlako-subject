@@ -107,7 +107,7 @@ class SubjectConsentAdmin(ModelAdminBasicMixin, ModelAdminMixin,
                    'gender',
                    FacilityListFilter)
 
-    search_fields = ('subject_identifier', 'dob',)
+    search_fields = ('subject_identifier', 'dob', 'screening_identifier')
 
     def get_readonly_fields(self, request, obj=None):
         return audit_fields
